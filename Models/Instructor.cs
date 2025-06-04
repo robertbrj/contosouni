@@ -20,6 +20,6 @@ public class Instructor
         get { return LastName + ", " + FirstMidName; }
     }
 
-    public virtual ICollection<Course> Courses { get; set; }
-    public virtual OfficeAssignment OfficeAssignment { get; set; }
+    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
+    public virtual OfficeAssignment? OfficeAssignment { get; set; }
 }

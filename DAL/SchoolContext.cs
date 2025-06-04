@@ -7,6 +7,7 @@ namespace ContosoUniversity.DAL
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
         public DbSet<Course> Courses { get; set; }
 
         public SchoolContext(DbContextOptions<SchoolContext> options)
@@ -184,5 +185,6 @@ namespace ContosoUniversity.DAL
                 new Enrollment { EnrollmentID = 11, StudentID = 6, CourseID = 2042, Grade = Grade.B }
             );
         }
+        public DbSet<Instructor> Instructor { get; set; } = default!;
     }
 }
