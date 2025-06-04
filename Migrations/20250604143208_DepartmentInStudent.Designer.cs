@@ -4,6 +4,7 @@ using ContosoUniversity.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContosoUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20250604143208_DepartmentInStudent")]
+    partial class DepartmentInStudent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -303,6 +306,9 @@ namespace ContosoUniversity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentID"));
 
+                    b.Property<int>("DepartmentID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("datetime2");
 
@@ -325,6 +331,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 1,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2010, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Carson",
                             LastName = "Alexander"
@@ -332,6 +339,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 2,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2012, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Meredith",
                             LastName = "Alonso"
@@ -339,6 +347,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 3,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2013, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Arturo",
                             LastName = "Anand"
@@ -346,6 +355,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 4,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2012, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Gytis",
                             LastName = "Barzdukas"
@@ -353,6 +363,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 5,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2012, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Yan",
                             LastName = "Li"
@@ -360,6 +371,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 6,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2011, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Peggy",
                             LastName = "Justice"
@@ -367,6 +379,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 7,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2013, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Laura",
                             LastName = "Norman"
@@ -374,6 +387,7 @@ namespace ContosoUniversity.Migrations
                         new
                         {
                             StudentID = 8,
+                            DepartmentID = 0,
                             EnrollmentDate = new DateTime(2005, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstMidName = "Nino",
                             LastName = "Olivetto"
